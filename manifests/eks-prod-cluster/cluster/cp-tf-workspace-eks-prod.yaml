@@ -11,10 +11,10 @@ spec:
       - key: aws_region
         value: us-east-1
       - key: cluster_name
-        value: eks-workload-prod
+        value: "eks-workload-prod"
       - key: cluster_version
-        value: 1.29  
+        value: "1.29"
       - key: vpc_name
-        value: eks-workload-prod              
+        value: "eks-workload-prod"            
   providerConfigRef:
-    name: cp-tf-provider-config      
+    name:       
