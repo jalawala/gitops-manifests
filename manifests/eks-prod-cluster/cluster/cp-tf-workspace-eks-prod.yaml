@@ -1,0 +1,20 @@
+apiVersion: tf.upbound.io/v1beta1
+kind: Workspace
+metadata:
+  name: cp-tf-workspace-eks-prod
+spec:
+  forProvider:
+    module: git::https://github.com/jalawala/gitops-iaac-apps.git
+    source: Remote
+    entrypoint: iaac/3.create-eks-prod-cluster
+    vars:
+      - key: aws_region
+        value: us-east-1
+      - key: cluster_name
+        value: eks-workload-prod
+      - key: cluster_version
+        value: 1.29  
+      - key: vpc_name
+        value: eks-workload-prod              
+  providerConfigRef:
+    name: cp-tf-provider-config      
