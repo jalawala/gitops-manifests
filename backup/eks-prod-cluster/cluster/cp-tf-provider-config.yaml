@@ -1,0 +1,16 @@
+---
+apiVersion: tf.upbound.io/v1beta1
+kind: ProviderConfig
+metadata:
+  name: cp-tf-provider-config
+spec:
+  credentials:
+    # Terraform natively supports IRSA auth so we can use None here
+    - filename: aws.json
+      source: None
+    - filename: .git-credentials # use exactly this filename
+      source: Secret
+      secretRef:
+        namespace: crossplane-system
+        name: git-credentials
+        key: .git-credentials
