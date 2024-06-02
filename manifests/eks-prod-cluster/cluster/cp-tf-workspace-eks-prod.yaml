@@ -17,4 +17,4 @@ spec:
       - key: vpc_name
         value: "eks-workload-prod"            
   providerConfigRef:
-    name:       
+    name: cp-tf-provider-config      
