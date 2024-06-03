@@ -1,0 +1,10 @@
+---
+apiVersion: aws.upbound.io/v1beta1
+kind: ProviderConfig
+metadata:
+  name: cp-upjet-aws-provider-config-eks-prod
+spec:
+  credentials:
+    source: IRSA
+  assumeRoleChain:
+    - roleARN: "arn:aws:iam::000474600478:role/eksworkshop-admin"

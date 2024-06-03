@@ -1,0 +1,14 @@
+---
+apiVersion: eks.aws.upbound.io/v1beta1
+kind: ClusterAuth
+metadata:
+  name: cp-upjet-aws-eks-cluster-auth-eks-prod
+spec:
+  forProvider:
+    region: us-east-1
+    clusterName: eks-workload-prod
+  providerConfigRef:
+    name: cp-upjet-aws-provider-config-eks-prod
+  writeConnectionSecretToRef:
+    namespace: crossplane-system
+    name: kubectx-eks-workload-prod

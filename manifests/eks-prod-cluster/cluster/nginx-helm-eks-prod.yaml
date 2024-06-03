@@ -1,0 +1,14 @@
+---
+apiVersion: helm.crossplane.io/v1beta1
+kind: Release
+metadata:
+  name: nginx-helm-eks-prod
+spec:
+  forProvider:
+    chart:
+      name: nginx
+      repository: https://charts.bitnami.com/bitnami
+      version: 17.0.1
+    namespace: default
+  providerConfigRef:
+    name: cp-helm-provider-config-eks-prod
