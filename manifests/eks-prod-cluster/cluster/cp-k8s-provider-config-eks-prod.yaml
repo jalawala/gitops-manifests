@@ -1,0 +1,12 @@
+---
+apiVersion: kubernetes.crossplane.io/v1alpha1
+kind: ProviderConfig
+metadata:
+  name: cp-k8s-provider-config-eks-prod
+spec:
+  credentials:
+    source: Secret
+    secretRef:
+      name: kubectx-eks-workload-prod
+      namespace: crossplane-system
+      key: kubeconfig
